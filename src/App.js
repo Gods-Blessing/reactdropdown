@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import Element from './Element';
 import './App.css';
 
 function App() {
+  const [open, setopen] = React.useState(false);
+  const arr = ["games","jobs","jokes", "james", "jake"];
+
+  function handleOpen(){
+    setopen((prevState)=>{
+      return !prevState;
+    })
+  }
+
+  function handleClose(){
+    setopen(false);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <h2>Click on the button</h2>
+      <button className='hovering' onClick={handleOpen} >Hover over this button</button>
+      {open && <div className="element"  >
+        <Element arr={arr} disappear={handleClose} />
+      </div>}
     </div>
   );
 }

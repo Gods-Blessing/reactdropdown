@@ -1,0 +1,19 @@
+.ele{
+    background-color: white;
+    border-radius: 10px;
+    width: 230px;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 20vw;
+}
+
+.written{
+    padding: 10px;
+    /* border-radius: 10px; */
+    border-radius: 10px;
+    transition: 600ms;
+}
+
+.written:hover{
+    background-color: gainsboro;
+}
